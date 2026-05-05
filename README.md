@@ -194,14 +194,6 @@ Prediction: Negative 😡
 * Add neutral sentiment class
 * Deploy on cloud (Streamlit Cloud / AWS)
 * Improve inference speed
-* Add confidence scores visualization
-
 ---
 
-## 👨‍💻 Author
 
-Your Name
-Master’s in Artificial Intelligence
-National College of Ireland
-
----
