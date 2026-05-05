@@ -2,40 +2,35 @@
 
 ## 📌 Overview
 
-This project focuses on building a robust sentiment analysis system that classifies text into **positive** and **negative** sentiments.
-It compares traditional machine learning models with a deep learning-based transformer model (**BERT**) to evaluate performance differences.
-
-The goal is to demonstrate how modern NLP techniques outperform classical approaches in understanding contextual meaning in text data.
+This project focuses on building a sentiment analysis system that classifies text into **positive** and **negative** sentiments.
+It compares traditional machine learning models with a transformer-based model (**BERT**) and provides an interactive **Streamlit web application** for real-time predictions.
 
 ---
 
 ## 🎯 Problem Statement
 
-With the increasing volume of user-generated content (reviews, tweets, comments), it becomes essential to automatically analyze sentiment for:
+With the growing volume of online text (tweets, reviews, comments), automated sentiment analysis is essential for:
 
-* Business insights
 * Customer feedback analysis
-* Social media monitoring
+* Brand monitoring
+* Social media insights
 
-This project aims to develop and compare multiple models for accurate sentiment classification.
+This project evaluates multiple models to identify the most effective approach.
 
 ---
 
 ## 📊 Dataset
 
-The dataset used in this project is:
-
 * **Sentiment140 Dataset**
 * Source: https://www.kaggle.com/datasets/kazanova/sentiment140
 
-### Dataset Details:
+### Details:
 
 * 1.6 million tweets
 * Labels:
 
   * `0` → Negative
   * `4` → Positive
-* No neutral class
 
 ---
 
@@ -43,8 +38,8 @@ The dataset used in this project is:
 
 ### 1. Data Preprocessing
 
-* Removed URLs, mentions, and special characters
-* Lowercasing text
+* Removed URLs, mentions, special characters
+* Lowercasing
 * Tokenization
 * Stopword removal (for ML models)
 
@@ -52,25 +47,16 @@ The dataset used in this project is:
 
 ### 2. Models Used
 
-#### 🔹 Traditional Machine Learning Models
+#### 🔹 Machine Learning
 
 * Logistic Regression
 * Support Vector Machine (SVM)
+* TF-IDF features
 
-Features:
+#### 🔹 Deep Learning
 
-* TF-IDF Vectorization
-
----
-
-#### 🔹 Deep Learning Model
-
-* BERT (Bidirectional Encoder Representations from Transformers)
-
-Features:
-
-* Context-aware embeddings
-* Fine-tuned on the dataset
+* BERT (Transformer-based model)
+* Fine-tuned for sentiment classification
 
 ---
 
@@ -82,11 +68,63 @@ Features:
 | SVM                 | ~84%     |
 | BERT                | ~90–92%  |
 
-### 🔍 Observations:
+### 🔍 Insights:
 
-* BERT significantly outperforms traditional models
-* Classical models struggle with sarcasm and context
-* Transformer models capture semantic meaning more effectively
+* BERT captures contextual meaning better
+* ML models are faster but less accurate
+* Transformers perform well on real-world text
+
+---
+
+## 🌐 Streamlit Web Application
+
+An interactive UI is built using Streamlit to test models in real time.
+
+### ✨ Features:
+
+* Input custom text and get sentiment prediction
+* Select different models:
+
+  * Logistic Regression
+  * SVM
+  * BERT
+* Compare predictions across models
+* Instant output (Positive / Negative)
+
+---
+
+## 🧪 How to Use the App
+
+### Run the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+### In the UI:
+
+1. Enter any sentence (e.g., product review or tweet)
+2. Choose a model from the dropdown
+3. Click **Predict**
+4. View the predicted sentiment
+
+---
+
+## 🔁 Model Switching
+
+The application allows dynamic model selection, enabling users to:
+
+* Compare how different models interpret the same text
+* Observe differences in prediction accuracy
+* Understand strengths of each approach
+
+Example:
+
+* Input: *"The movie was surprisingly good"*
+
+  * Logistic Regression → Positive
+  * SVM → Positive
+  * BERT → Positive (higher confidence)
 
 ---
 
@@ -94,15 +132,16 @@ Features:
 
 * Python
 * Scikit-learn
-* TensorFlow / PyTorch
 * HuggingFace Transformers
-* Pandas, NumPy, Matplotlib
+* TensorFlow / PyTorch
+* Streamlit
+* Pandas, NumPy
 
 ---
 
-## ▶️ How to Run
+## ▶️ How to Run the Project
 
-### 1. Clone the repository
+### 1. Clone repository
 
 ```bash
 git clone https://github.com/yourusername/sentiment-analysis-bert.git
@@ -115,43 +154,47 @@ cd sentiment-analysis-bert
 pip install -r requirements.txt
 ```
 
-### 3. Run the project
+### 3. Run model (optional)
 
 ```bash
 python main.py
+```
+
+### 4. Run web app
+
+```bash
+streamlit run app.py
 ```
 
 ---
 
 ## 📸 Sample Output
 
-Example:
-
 ```
 Input: "I absolutely love this product!"
-Output: Positive 😊
+Prediction: Positive 😊
 
-Input: "This is the worst experience ever."
-Output: Negative 😡
+Input: "Worst service ever."
+Prediction: Negative 😡
 ```
 
 ---
 
 ## 🚀 Key Highlights
 
-* Comparison between ML and Deep Learning models
-* Real-world dataset with large-scale training
-* Demonstrates effectiveness of transformer models
-* Practical NLP pipeline implementation
+* End-to-end NLP pipeline
+* Comparison of ML vs Transformer models
+* Interactive web application
+* Real-time sentiment prediction
 
 ---
 
 ## 🔮 Future Improvements
 
 * Add neutral sentiment class
-* Deploy as a web application (Streamlit/Flask)
-* Real-time Twitter sentiment analysis
-* Model optimization for faster inference
+* Deploy on cloud (Streamlit Cloud / AWS)
+* Improve inference speed
+* Add confidence scores visualization
 
 ---
 
